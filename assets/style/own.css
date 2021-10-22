@@ -1,0 +1,82 @@
+.orange--text {
+  color: #ff4e00 !important;
+}
+.subtitle {
+  color: #0c7091 !important;
+  caret-color: #0c7091 !important;
+}
+.border-container {
+  border: 2px solid #f7f3f3;
+  border-radius: 24px;
+  padding: 6px 6px 4px;
+  /*margin: 0 22px;*/
+}
+.terminos {
+  color: #ff4e00;
+  font-size: 9.5px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.from-title {
+  height: 52px;
+  border-radius: 14px !important;
+  font-weight: 700;
+  background-image: linear-gradient(315deg, #ff4e00, #ec9f05 74%);
+  color: #ffffff !important;
+  font-size: 18px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.from-title2{
+  height: 68px;
+  border-radius: 14px !important;
+  font-weight: 700;
+  background-image: linear-gradient(315deg, #ff4e00, #ec9f05 74%);
+  color: #ffffff !important;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+}
+.from-title2 h3{
+  font-size: 14px;
+}
+
+.from-title2 h5{
+  font-size: 12px;
+}
+.v-input .v-input__control .v-input__slot .v-input--radio-group__input {
+  justify-content: space-evenly !important;
+}
+
+.v-application--wrap{
+  background-color: #e7e7e7 !important;
+  background: url("./assets/encuesta/fondo-Movil.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 960px) {
+  .logo {
+    width: 40%;
+  }
+  .v-application--wrap{
+  background-color: #e7e7e7 !important;
+  background: url("./assets/encuesta/fondo-PC.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+}
+
+@media (min-width: 434px) {
+  .from-title2 h3{
+  font-size: 22px;
+  }
+
+  .from-title2 h5{
+  font-size: 14px;
+  }
+}
+
+

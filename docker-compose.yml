@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+  web:
+    image: registry.devacceso.com/${CI_PROJECT_NAME}:${CI_PIPELINE_ID}
+    build:
+      context: .
+      args:
+        NAME_ENV : ${ENVDEPLOY}
+    restart: always
+    environment:
+      - TZ=America/Lima
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    extra_hosts:
+      - 'workflow.pe:10.3.3.112'
+      - 'alteryx.acceso.com.pe:192.168.4.128'
+      - 'api.acr.pe:192.168.4.224'
+      - 'api.acceso.com.pe:192.168.4.161'
+      - 'sd1.accesocrediticio.com:10.3.3.122'
+      - 'kong-prueba.acceso.com.pe:192.168.4.136'
+    # ports:
+    #   - '${PORTSALIDA}:${PORTDOCKER}'
+    # command: npm run start-staging
+    logging:
+      driver: "gelf"
+      options:
+        gelf-address: "udp://192.168.4.239:12201"
+        tag: ${CI_PROJECT_NAME}
+    networks:
+      - traefik-public
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.name == dev
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.constraint-label=traefik-public
+        - traefik.http.routers.participaygana-http.rule=Host(`participaygana.devacceso.com`)
+        - traefik.http.routers.participaygana-http.entrypoints=http
+        - traefik.http.routers.participaygana-http.middlewares=https-redirect
+        - traefik.http.routers.participaygana-https.rule=Host(`participaygana.devacceso.com`)
+        - traefik.http.routers.participaygana-https.entrypoints=https
+        - traefik.http.routers.participaygana-https.tls=true
+        - traefik.http.routers.participaygana-https.tls.certresolver=le
+        - traefik.http.services.participaygana.loadbalancer.server.port=80
+
+networks:
+  traefik-public:
+    external: true
+

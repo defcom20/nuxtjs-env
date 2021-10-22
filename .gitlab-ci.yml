@@ -1,0 +1,26 @@
+image: tiangolo/docker-with-compose
+
+stages:
+  - develop
+
+develop:
+  stage: develop
+  before_script:
+    - docker login registry.devacceso.com --username=docker -p=peladonerd
+  only:
+    - develop 
+  tags:
+    - swarm-dev
+  variables:
+    ENVDEPLOY: build
+    PORTDOCKER: 80
+    PORTSALIDA: 3200
+    IMAGENAME: $CI_PROJECT_NAME
+    DOCKER_STACK: $CI_PROJECT_NAME
+  script:
+    - export
+    - docker-compose build
+    - docker-compose push
+    - docker stack deploy -c docker-compose.yml $DOCKER_STACK --with-registry-auth
+
+

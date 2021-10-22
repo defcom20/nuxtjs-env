@@ -1,0 +1,27 @@
+{
+  "environment": {
+    "NUXT_ENV": "STAGING",
+    "NUXT_ENV_BASE_URL": "https://sd1.accesocrediticio.com",
+    "SITEKEY_CAPTCHA": "6LeF85sUAAAAABEw-e6il4aleaBJcQwjQDmfpA-e",
+    "SECRETKEY_CAPTCHA": "6LeF85sUAAAAAMuWGVJ9qHmMUkBtuj3W4AqjSC7O",
+    "ID_ANALYTICS": "UA-130756504-1",
+    "DEFAULT_URL": "https://sd1.accesocrediticio.com",
+    "arcaDJ": "2414254",
+    "ID_ADS": "AW-809651338",
+    "SEND_TO_ADS": "AW-809651338/jwnGCOaIqfoBEIqZiYID",
+
+    "NUXT_ENV_TEST_BASE_URL": "https://apiland.acceso.com.pe/ms/",
+    "NUXT_ENV_V4_BASE_URL": "https://sd1.accesocrediticio.com/",
+    "NUXT_ENV_V5_BASE_URL": "https://sd1.accesocrediticio.com/",
+    "NUXT_ENV_V6_BASE_URL": "https://sd1.accesocrediticio.com/",
+    "NUXT_ENV_V7_BASE_URL": "https://sd1.accesocrediticio.com/",
+    "NUXT_ENV_V8_BASE_URL": "http://sd11.accesocrediticio.com:5015/ms/",
+    "NUXT_ENV_V9_BASE_URL": "http://sd11.accesocrediticio.com:6016/ms/",
+    "NUXT_ENV_BASE_KONG" : "https://kong-prueba.acceso.com.pe",
+    "SOCKET_URL": "http://192.168.54.215:2727",
+    "SOCKET_URL_EXT": "http://192.168.44.105:2727",
+    "BASIC_AUTH": "Basic YXBpYWNjYWNjOlZWMWc4SnZrN3A0djVoVFBSNFZj",
+    "BASIC_AUTH_KONG": "Basic YWNjZXNvQ3JlZGl0aWNpbzo5MWQ4YTJlZWNiMDgxOGYwNzg1ZjQzNjNhY2ZlNTIwMTNlODM2NWE1",
+    "NUXT_KEYJWT": "4cc3s0123"
+  }
+}
